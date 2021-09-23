@@ -9,16 +9,19 @@
 
 {{ config(materialized='table') }}
 
-with source_data as (
+with final as (
 
-    select 1 as id
-    union all
-    select null as id
+    SELECT
+        *
+    FROM
+     {{ source('dev','austin_bikeshare_trips') }}
+    WHERE 
+        duration_minutes > 2
 
 )
 
 select *
-from source_data
+from final
 
 /*
     Uncomment the line below to remove records with null `id` values
