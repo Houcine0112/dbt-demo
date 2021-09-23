@@ -1,0 +1,7 @@
+version: 2
+
+sources:
+  - name: dev
+    tables:
+      - name: austin_bikeshare_stations
+      - name: austin_bikeshare_trips
