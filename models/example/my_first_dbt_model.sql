@@ -16,7 +16,7 @@ with final as (
     FROM
      {{ source('dev','austin_bikeshare_trips') }}
     WHERE 
-        duration_minutes > 2
+        duration_minutes > 3
 
 )
 
